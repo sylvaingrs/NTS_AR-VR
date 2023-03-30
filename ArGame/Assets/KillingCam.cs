@@ -10,8 +10,6 @@ public class KillingCam : MonoBehaviour
     private RaycastHit hit;
     private Camera cam;
 
-    private int score = 0;
-
     [SerializeField] GameObject AppOrigin;
     private ApplicationManager _manager;
 
@@ -20,7 +18,6 @@ public class KillingCam : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         _manager = AppOrigin.GetComponent<ApplicationManager>();
-        score = 0;
     }
 
     // Update is called once per frame
@@ -38,18 +35,11 @@ public class KillingCam : MonoBehaviour
             GameObject hitObj = hit.collider.gameObject;
             if (hitObj.tag == "Enemy")
             {
-                _manager.EndGame(true);
                 var clone = Instantiate(particleEffect, hitObj.transform.position, Quaternion.identity);
                 clone.transform.localScale = hitObj.transform.localScale;
                 Destroy(hitObj);
-                score += 1;
-                _manager.EditScore(score);
+                _manager.AddScore();
             }
         }
-    }
-
-    public void ResetScore()
-    {
-        score = 0;
     }
 }
