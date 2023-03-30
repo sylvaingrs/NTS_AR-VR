@@ -13,6 +13,8 @@ public class KillingCam : MonoBehaviour
     [SerializeField] GameObject AppOrigin;
     private ApplicationManager _manager;
 
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class KillingCam : MonoBehaviour
                 clone.transform.localScale = hitObj.transform.localScale;
                 Destroy(hitObj);
                 _manager.AddScore();
+                audioSource.Play();
             }
         }
     }

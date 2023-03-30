@@ -49,11 +49,10 @@ public class ApplicationManager : MonoBehaviour
     private void InitGame()
     {
         EnemyNumber = 25;
-        EnemyKilled = -1;
         timer = defaultTimer;
-        AddScore();
         SpawnEnemy();
-        firstLaunch = false;
+        EnemyKilled = -1;
+        AddScore();
 
         // make menu invisible
         background.enabled = false;

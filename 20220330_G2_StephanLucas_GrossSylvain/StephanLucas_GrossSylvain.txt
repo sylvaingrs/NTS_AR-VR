@@ -1,0 +1,1 @@
+Notre jeu sera un jeu de tir sur cibles avec un temps imparti. si le joueur arrive à tirer sur toutes les cibles (toucher les cibles avec le doigt) avant 30s il gagne sinon il perd, avec son score. l'interaction est donc de tirer sur les cibles. Notre script de backend est en Mono.
